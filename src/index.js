@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ReactDOM from "react-dom";
 import axios from "axios";
 
-import Charts from "./components/Charts";
-import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import CoinInfo from "./components/CoinInfo";
+// import Charts from "./components/Charts";
+// import Navbar from "./components/Navbar";
 
 import useDarkMode from "./hooks/useDarkMode";
 
@@ -18,16 +21,22 @@ const App = () => {
       .get(
         "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=true"
       )
-      .then(res => setCoinData(res.data))
+      .then(res => {
+        console.log(res);
+        setCoinData(res.data);
+      })
       .catch(err => console.log(err));
   }, []);
   return (
-    <div className={darkMode ? "dark-mode App" : "App"}>
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <Charts coinData={coinData} />
-    </div>
+    <Switch>
+      <Route path='/:coin' component={CoinInfo}/>
+      <Route path='/' render={()=> <Home darkMode={darkMode} setDarkMode={setDarkMode} coinData={coinData}/> } />
+    </Switch>
   );
 };
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(
+  <Router>
+    <App />
+  </Router>, rootElement);

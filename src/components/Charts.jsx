@@ -1,11 +1,19 @@
 import React from "react";
 import Chart from "./Chart";
+import { useHistory } from 'react-router-dom';
 
 const Charts = ({ coinData }) => {
+  const history = useHistory();
+ 
+
+  const handleClick = (coinData) =>{
+    console.log(coinData.name);
+    history.push(`/${coinData.name}`)
+  }
   return (
     <div className="charts">
       {coinData.map(coin => (
-        <div className="chart__container" key={coin.name}>
+        <div onClick={() => handleClick(coin)}className="chart__container" key={coin.name}>
           <h2 className="coin__title">{coin.name}</h2>
           <h4 className="coin__symbol">{coin.symbol}</h4>
           <div className="coin__logo">
