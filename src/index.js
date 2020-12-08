@@ -5,8 +5,6 @@ import axios from "axios";
 
 import Home from "./components/Home";
 import CoinInfo from "./components/CoinInfo";
-// import Charts from "./components/Charts";
-// import Navbar from "./components/Navbar";
 
 import useDarkMode from "./hooks/useDarkMode";
 
