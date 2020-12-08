@@ -27,7 +27,7 @@ const App = () => {
   }, []);
   return (
     <Switch>
-      <Route path='/:coin' component={CoinInfo}/>
+      <Route path='/:coin' render={() => <CoinInfo darkMode={darkMode} setDarkMode={setDarkMode}/> }/>
       <Route path='/' render={()=> <Home darkMode={darkMode} setDarkMode={setDarkMode} coinData={coinData}/> } />
     </Switch>
   );
