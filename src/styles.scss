@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'VT323';
+  src: local('VT323'), url(./fonts/VT323-Regular.ttf) format('truetype');
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -161,12 +165,24 @@ img {
   width: 100%;
 }
 
-.App {
+.App, .coin-info-wrapper {
   font-family: sans-serif;
   text-align: center;
   width: 100%;
 }
 
+.ticker {
+  margin: 20px 0;
+  font-size: 1.4rem;
+  height: 3.2rem;
+}
+.ticker_content {
+  font-family: 'VT323';
+  font-size: 1.8rem;
+}
+.coin-info-wrapper {
+  min-height: 100vh;
+}
 .navbar {
   align-items: center;
   border-bottom: 1px solid rgb(221, 221, 221);
@@ -203,7 +219,7 @@ img {
   left: 18px;
 }
 
-.charts {
+.charts, .coin-info {
   width: 80%;
   margin: 0 auto;
 }
@@ -216,7 +232,18 @@ img {
   margin: 50px 0 0;
   width: 100%;
 }
+.chart__container .coin_header {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
 
+}
+.chart__container .coin_button, .coin_button {
+  margin: 16px;
+  padding: 4px 8px;
+  background: #fff;
+
+}
 .chart-header {
   display: flex;
   align-items: center;
@@ -229,8 +256,8 @@ img {
 .coin__title {
   display: block;
   margin-left: 8px;
-    min-width: 160px;
-text-align: left;
+  min-width: 160px;
+  text-align: left;
 }
 
 .coin__symbol {
@@ -240,6 +267,49 @@ text-align: left;
 
 .coin__logo {
   width: 50px;
+}
+
+.coin-info {
+  margin: 25px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.coin-info-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.coin-info-header img {
+  width: 25px;
+}
+.coin-description {
+  font-size: 1.4rem;
+  text-align: left;
+  letter-spacing: 1.2;
+  line-height: 1.2;
+}
+
+.coin-description a, .coin-home-link a{
+  text-decoration: none;
+  color: #f68819;
+}
+.coin-description a:hover, .coin-home-link a:hover {
+  color: inherit;
+}
+
+.coin-info-list {
+  margin: 16px auto;
+  list-style-type: none;
+  font-size: 1.4rem;
+  text-align: left;
+}
+.coin-info-list li {
+  padding: 5px 0;
 }
 
 .dark-mode {
