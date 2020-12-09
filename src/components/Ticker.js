@@ -10,7 +10,7 @@ const CryptoCurrencyTicker = (props) => {
         const spacing = ' ----- ';
         props.coinData.forEach(coin => {
             console.log(coin.name);
-            newTickerData += `${coin.name} ${coin.price_change_24h} ${spacing}`;
+            newTickerData += ` ${coin.name} ${coin.price_change_24h} ${spacing} `;
         });
         setTickerData(newTickerData);
     }

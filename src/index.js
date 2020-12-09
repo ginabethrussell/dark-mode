@@ -7,7 +7,7 @@ import Home from "./components/Home";
 import CoinInfo from "./components/CoinInfo";
 
 import useDarkMode from "./hooks/useDarkMode";
-
+import './fonts/VT323-Regular.ttf'
 import "./styles.scss";
 
 const App = () => {

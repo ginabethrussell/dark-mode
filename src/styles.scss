@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'VT323';
+  src: local('VT323'), url(./fonts/VT323-Regular.ttf) format('truetype');
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -172,7 +176,10 @@ img {
   font-size: 1.4rem;
   height: 3.2rem;
 }
-
+.ticker_content {
+  font-family: 'VT323';
+  font-size: 1.8rem;
+}
 .coin-info-wrapper {
   min-height: 100vh;
 }
