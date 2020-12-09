@@ -5,7 +5,6 @@ import Navbar from './Navbar';
 
 export default function CoinInfo(props) {
     const params = useParams();
-    console.log(params.coin);
     const history = useHistory();
     const [coin, setCoin ] = useState(params.coin.toLowerCase());
     const [coinData, setCoinData] = useState(null);
@@ -15,14 +14,12 @@ export default function CoinInfo(props) {
         .then(response => {
             console.log(response.data);
             setCoinData(response.data);
-            console.log(response.data.description.en);
         })
         .catch(err => {
-            console.log('Error:',err);
             setCoinData('');
         })
     }, [])
-    console.log("coin data", typeof(coinData));
+    
     return (
            
             coinData !== '' ? 

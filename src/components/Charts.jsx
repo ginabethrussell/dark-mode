@@ -7,7 +7,6 @@ const Charts = ({ coinData }) => {
  
 
   const handleClick = (coinData) =>{
-    console.log(coinData.name);
     history.push(`/${coinData.name}`)
   }
   return (

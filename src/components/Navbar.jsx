@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Navbar = (props) => {
-  console.log(props);
+
   const {title} = props;
 
   const toggleMode = e => {
